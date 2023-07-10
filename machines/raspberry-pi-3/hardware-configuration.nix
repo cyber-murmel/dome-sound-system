@@ -23,12 +23,4 @@
       "mmc_block"
     ];
   };
-
-  hardware = {
-    # needed for wlan0 to work (https://github.com/NixOS/nixpkgs/issues/115652)
-    enableRedistributableFirmware = pkgs.lib.mkForce false;
-    firmware = with pkgs; [
-      raspberrypiWirelessFirmware
-    ];
-  };
 }
