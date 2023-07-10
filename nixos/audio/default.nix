@@ -2,6 +2,9 @@
 
 {
   sound.enable = true;
+
+  security.rtkit.enable = true;
+
   hardware.pulseaudio = {
     enable = true;
     systemWide = true;
@@ -32,6 +35,7 @@
         ${pkgs.pulseaudio}/etc/pulse/default.pa > $out
     '';
   };
+  users.extraUsers.pulse.extraGroups = [ "rtkit" ];
 
   services.shairport-sync = {
     group = "pulse-access";
