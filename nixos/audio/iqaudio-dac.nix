@@ -5,5 +5,5 @@
     dtoverlay=iqaudio-dacplus,auto_mute_amp,unmute_amp
   '';
 
-  hardware.pulseaudio.extraConfig = "set-default-sink 1";
+  # hardware.pulseaudio.extraConfig = "set-default-sink 1";
 }
