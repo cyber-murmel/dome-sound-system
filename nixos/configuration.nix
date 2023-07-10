@@ -5,6 +5,7 @@
     ./audio
     ./audio/iqaudio-dac.nix
     ./bluetooth
+    ./mpd
   ]
   ++ lib.optionals (builtins.pathExists ./hardware-configuration.nix) [ ./hardware-configuration.nix ]
   ++ lib.optionals (builtins.pathExists ./custom.nix) [ ./custom.nix ];
