@@ -38,9 +38,10 @@
   users.extraUsers.pulse.extraGroups = [ "rtkit" ];
 
   services.shairport-sync = {
-    group = "pulse-access";
     enable = true;
   };
+  users.extraUsers.shairport.extraGroups = [ "pulse-access" "rtkit" ];
+  systemd.services.shairport-sync.after = [ "pulseaudio.service" ];
 
   nixpkgs.overlays = with pkgs;[
     (final: prev: {
