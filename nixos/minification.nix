@@ -10,8 +10,8 @@ with lib;
   # don't include a 'command not found' helper
   programs.command-not-found.enable = mkDefault false;
 
-  # disable firewall (needs iptables)
-  networking.firewall.enable = mkDefault false;
+  # # disable firewall (needs iptables)
+  # networking.firewall.enable = mkDefault false;
 
   # disable polkit
   security.polkit.enable = mkDefault false;

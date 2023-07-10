@@ -35,6 +35,7 @@
         ${pkgs.pulseaudio}/etc/pulse/default.pa > $out
     '';
   };
+  networking.firewall.allowedTCPPorts = [ 4713 ];
   users.extraUsers.pulse.extraGroups = [ "rtkit" ];
 
   services.shairport-sync = {
