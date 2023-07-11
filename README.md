@@ -23,5 +23,5 @@ $ nix-build -I nixpkgs=$NIXPKGS -I machine=machines/$MACHINE --out-link out-link
 # set correct path for SD card
 export SD_CARD=/dev/sda
 # inflate image and write to SD card
-zstd -dcf out-links/$MACHINE/sd-image/*.img.zst | sudo dd status=progress bs=64k iflag=fullblock oflag=direct of=$SD_CARD && sync && sudo eject $SD_CARD
+sudo sh -c "zstd -dcf out-links/$MACHINE/sd-image/*.img.zst | dd status=progress bs=64k iflag=fullblock oflag=direct of=$SD_CARD && sync && eject $SD_CARD"
 ```
